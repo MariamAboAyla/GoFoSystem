@@ -1,9 +1,9 @@
 
 // Mariam Khaled
 public class Booking {
-    private String date;
-    private String startTime;
-    private String endTime;
+    public String date;
+    public String startTime;
+    public String endTime;
     private Player player;
     private Playground playground;
     private int totalPrice;
@@ -16,13 +16,16 @@ public class Booking {
         this.playground = playground;
     }
 
-    public int showTotalPrice(){
-        int initialPrice = Integer.parseInt ( endTime ) - Integer.parseInt ( startTime );
-        totalPrice = initialPrice * (playground.getPricePerHour());
+    public void showBookingDetails(){
         System.out.println ( "Booking details: " );
         System.out.println ( "Date: "+date);
         System.out.println("Start time: "+startTime+", End Time: "+endTime );
         System.out.println ( "price per hour: "+ playground.getPricePerHour()+", total price: "+totalPrice);
+    }
+
+    public int showTotalPrice(){
+        int initialPrice = Integer.parseInt ( endTime ) - Integer.parseInt ( startTime );
+        totalPrice = initialPrice * (playground.getPricePerHour());
         return totalPrice;
     }
 
