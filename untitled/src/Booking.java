@@ -19,6 +19,11 @@ public class Booking {
     public int showTotalPrice(){
         int initialPrice = Integer.parseInt ( endTime ) - Integer.parseInt ( startTime );
         totalPrice = initialPrice * (playground.getPricePerHour());
+        System.out.println ( "Booking details: " );
+        System.out.println ( "Date: "+date);
+        System.out.println("Start time: "+startTime+", End Time: "+endTime );
+        System.out.println ( "price per hour: "+ playground.getPricePerHour()+", total price: "+totalPrice);
+        return totalPrice;
     }
 
 
