@@ -7,6 +7,7 @@ public class Player extends User {
 
     public void showBooking(){
         for (int i=0; i<=book.length; i++){
+            System.out.println ( "Booking #"+i );
             book[i].showBookingDetails ();
         }
     }
@@ -26,14 +27,21 @@ public class Player extends User {
                 book[j] = book[j + 1];
             }
             bookIndex--;
+            System.out.println ( "Booking cancelled successfully!" );
         }
-        System.out.println ( "Booking cancelled successfully!" );
+        else{
+            System.out.println ( "Booking doesn't exist!" );
+        }
+
     }
 
     public void addBooking(Booking booking){
+        for ()
+
+
         bookIndex++;
         book[bookIndex] = booking;
-
+        System.out.println ( "Booking added successfully!" );
     }
 
     // not necessary to be implemented
