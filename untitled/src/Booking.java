@@ -4,11 +4,11 @@ public class Booking {
     public String date;
     public String startTime;
     public String endTime;
-    private Player player;
-    private Playground playground;
+    public Player player;
+    public Playground playground;
     private int totalPrice;
 
-    public Booking (String date, String startTime, String endTime, Player player, Playground playround ){
+    public Booking (String date, String startTime, String endTime, Player player, Playground playground ){
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
