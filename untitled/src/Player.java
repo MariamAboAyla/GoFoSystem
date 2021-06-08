@@ -1,10 +1,19 @@
-
-// Mariam Khaled
+/**
+ * Represents the player who is a kind of user, but he is the one that books the playground and add members
+ * to his team and invite them.
+ * @author Mariam Khaled
+ * @version 1.0
+ * @since June 2021
+ *
+ */
 public class Player extends User {
     private Booking[] book;
     private Team team;
     private int bookIndex = 0;
 
+    /**
+     * Displays all the current booking of that player.
+     */
     public void showBooking(){
         if (bookIndex != 0) {
             for (int i = 0; i <= book.length; i++) {
@@ -17,6 +26,10 @@ public class Player extends User {
         }
     }
 
+    /**
+     * Cancels a booking for the player.
+     * @param booking Represents the booking that will be deleted
+     */
     public void cancelBooking (Booking booking){
         // didn't check cancellation period as it is out of scope
         int index=-1;
@@ -39,6 +52,10 @@ public class Player extends User {
 
     }
 
+    /**
+     * Adds a new booking to that player's bookings.
+     * @param booking Represents the booking that the player wants to make
+     */
     public void addBooking(Booking booking){
         //didn't get in the details of money transaction (out of required scope)
         if (booking.playground.checkBooking(booking) && booking.playground.getStatus().equals ( "Activate" )) {
@@ -54,6 +71,10 @@ public class Player extends User {
         }
     }
 
+    /**
+     * Creates a team to that player, includes other players that he will add
+     * @param team Represents the team members that he wants to add as his team on his profile.
+     */
     // out of the required scope
     public void createTeam (Team team){}
 
