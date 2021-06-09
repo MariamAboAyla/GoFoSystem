@@ -13,20 +13,18 @@ public class Administrator {
      * @param playground Tht represents the playground that the administrator will do action on
      * @return The state of the playground (True: will be added on the system (Active), False: will be suspended)
      */
-    public boolean checkPlayground (Playground playground){
-        if ( playground.getStatus ( ).equals ( "Suspend" ) ){
+    public Playground checkPlayground (Playground playground,String status){
+        if ( status.equalsIgnoreCase( "Not_Activate" ) ){
             // out of scope
-            playground.updateStatus("Activate");
-            return true;
+            playground.updateStatus(Status.Not_Activate);
         }
-        else if (playground.getRate()<1.5 && playground.getStatus ( ).equals ( "Not_Activate" ) ){
-            playground.updateStatus("Suspend");
-            return false;
+        else if (playground.getRate()<1.5 && status.equalsIgnoreCase( "suspend" ) ){
+            playground.updateStatus(Status.Suspend);
         }
-        else{
-            playground.updateStatus("Activate");
-            return true;
+        else {
+            playground.updateStatus(Status.Activate);
         }
+        return playground;
     }
 
     /**
@@ -35,6 +33,12 @@ public class Administrator {
      * @return
      */
     //not implemented as it is currently out of scope
-    public boolean deletePlayground (Playground playground){return false;}
-
+    public boolean deletePlayground (Playground playground)
+    {
+        if(playground.getRate()<1)
+        {
+            return true;
+        }
+        return false;
+    }
 }

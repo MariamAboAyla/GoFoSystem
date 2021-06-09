@@ -93,6 +93,12 @@ public class Playground
             }
         }
     }
+    public void setAvailableHour1(String availableHour1) {
+        this.availableHour1 = availableHour1;
+    }
+    public void setAvailableHour2(String availableHour2) {
+        this.availableHour2 = availableHour2;
+    }
     public boolean checkBooking(Booking booking)
     {
         for(int i=0;i<this.booking.size();i++)

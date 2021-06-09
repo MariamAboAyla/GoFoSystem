@@ -12,6 +12,19 @@ public class Player extends User {
     private int bookIndex = 0;
 
     /**
+     *
+     * @param name
+     * @param nationalID
+     * @param password
+     * @param email
+     * @param phone
+     * @param location
+     * @param ewalletAmount
+     */
+    public Player(String name, String nationalID, String password, String email, String phone, String location, int ewalletAmount) {
+        super(name, nationalID, password, email, phone, location, ewalletAmount);
+    }
+    /**
      * Displays all the current booking of that player.
      */
     public void showBooking(){
@@ -76,6 +89,8 @@ public class Player extends User {
      * @param team Represents the team members that he wants to add as his team on his profile.
      */
     // out of the required scope
-    public void createTeam (Team team){}
+    public void createTeam (Team team){
+        team.addPlayer(this);
+    }
 
 }
