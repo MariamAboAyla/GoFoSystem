@@ -1,3 +1,5 @@
+package com.company;
+
 /**
  * Represents the administrator and the methods (functions) that he is capable of doing.
  * @author Mariam Khaled
@@ -6,7 +8,7 @@
  *
  */
 public class Administrator {
-
+    ///////////////////////////////////methods/////////////////////////////////////
     /**
      * Checks whether this playground should be added on the system, stay activate on the system or to be suspended. As
      * it change teh playground's state.
@@ -30,15 +32,12 @@ public class Administrator {
     /**
      * It deletes a playground from the system.
      * @param playground
-     * @return
+     * @return object of playground
      */
     //not implemented as it is currently out of scope
-    public boolean deletePlayground (Playground playground)
+    public Playground deletePlayground (Playground playground)
     {
-        if(playground.getRate()<1)
-        {
-            return true;
-        }
-        return false;
+        playground.updateStatus(Status.deleted);
+        return playground;
     }
 }

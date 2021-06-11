@@ -1,10 +1,10 @@
+package com.company;
 /**
  * Represents the booking as it sets booking details and show the booking details
  * in addition to the fact that it calculate the total price of the booking.
  * @author Mariam Khaled
  * @version 1.0
  * @since June 2021
- *
  */
 public class Booking {
     public String date;
@@ -13,10 +13,9 @@ public class Booking {
     public Player player;
     public Playground playground;
     private int totalPrice;
-
+    //////////////////////////constructor/////////////////////////////////////////
     /**
      * Creates a new booking and sets its details
-     *
      * @param date       The booking date
      * @param startTime  The booking starting time
      * @param endTime    The booking ending time
@@ -30,7 +29,7 @@ public class Booking {
         this.player = player;
         this.playground = playground;
     }
-
+    ///////////////////////////////////methods/////////////////////////////////////
     /**
      * A method that shows all the booking details (Date, start time, end time, playground price per hour, total price of booking)
      */
@@ -40,7 +39,6 @@ public class Booking {
         System.out.println("Start time: " + startTime + ", End Time: " + endTime);
         System.out.println("price per hour: " + playground.getPricePerHour() + ", total price: " + totalPrice);
     }
-
     /**
      * Represents the total price that the player should pay for this booking.
      *
@@ -63,24 +61,24 @@ public class Booking {
         }
         if(index0End == '1')
         {
-            endslot= convert2[2] - '0';
+            endslot= convert2[1] - '0';
             endslot+=10;
         }
         else
         {
-            endslot= convert2[2]- '0';
+            endslot= convert2[1]- '0';
         }
         if(this.startTime.contains("pm") && this.endTime.contains("am"))
         {
             startslot+=12;
-            diff = endslot - startslot;
+            diff = 24- startslot ;
+            diff+=endslot;
             totalPrice = diff * playground.getPricePerHour();
         }
         else if(this.startTime.contains("am") && this.endTime.contains("pm"))
         {
             endslot+=12;
-            diff= 24 - endslot;
-            diff += startslot;
+            diff= endslot - startslot;
             totalPrice = diff * playground.getPricePerHour();
         }
         else
